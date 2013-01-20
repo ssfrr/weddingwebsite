@@ -29,18 +29,26 @@ loadInitials = function () {
   var initialsImage = "images/initials-banner.png"
   initialsCB = function () {
     $("header").append("<img class='offset hidden' src='"+initialsImage+"'>");
+
     setTimeout(function () {
       $("header img").removeClass("offset");
     }, 10);
+
     $("header img").fadeIn(800, function () {
-      $(".column").fadeIn("slow", function () {
-        $("#map").append(map);
-        $("body").append('<div class="footer" />');
+      $(".column, .intro").fadeIn("slow", function () {
+        loadMap();
       });
     });
   }
 
   loadImage(initialsImage, initialsCB);
+}
+
+loadMap = function () {
+  if ($("#map").html() == '') {
+    $("#map").append(map);
+    $("body").append('<div class="footer" />');
+  }
 }
 
 var loadImage = function (src, cb) {

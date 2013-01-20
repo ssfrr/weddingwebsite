@@ -272,7 +272,6 @@ header img.offset {
 
 .column {
   width: 640px;
-  min-height: 1880px;
   margin: 0 auto 50px;
   position: relative;
   overflow: hidden;
@@ -293,10 +292,22 @@ nav a:first-child {
   margin-left: 0;
 }
 
+.intro {
+  position: relative;
+  width: 100%;
+}
+
+.intro-image-2 {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
 .content {
   float: left;
   clear: both;
   width: 100%;
+  min-height: 1880px;
   margin-top: 20px;
 }
 
