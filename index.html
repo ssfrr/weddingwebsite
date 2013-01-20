@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="./css/style.css" />
 
     <script src="javascript/jquery.js"></script>
+    <script src="javascript/jquery.cookie.js"></script>
     <script src="javascript/main.js"></script>
   </head>
   <body>
@@ -25,7 +26,12 @@
       </nav>
       <div class="content">
         <h2 id="rsvp">RSVP</h2>
-        <form action="https://docs.google.com/a/nicholasbs.net/spreadsheet/formResponse?formkey=dHI2MUVuRV9BbU5LMmk4enplYzZ2Mmc6MQ&amp;ifq" method="POST" id="ss-form">
+        <iframe id="hidden-iframe" name="hidden-iframe"></iframe>
+        <div id="thank-you">
+          Thanks for responding!
+          <a href="" id="clear-rsvp">Clear RSVP</a>
+        </div>
+        <form action="https://docs.google.com/a/nicholasbs.net/spreadsheet/formResponse?formkey=dHI2MUVuRV9BbU5LMmk4enplYzZ2Mmc6MQ&amp;ifq" method="POST" target="hidden-iframe" id="rsvp-form">
           <ol>
             <li>
               <label for="entry_0">Your name<span class="ss-required-asterisk">*</span></label>

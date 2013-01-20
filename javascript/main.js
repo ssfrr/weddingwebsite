@@ -1,7 +1,19 @@
 $(document).ready(function () {
   rsvpForm();
   loadImages();
+
+  $.cookie.json = true;
+  if ($.cookie("rsvpStatus")) {
+    showRsvpStatus();
+  }
 });
+
+var rsvpStatus = {
+  submitted: false,
+  name1: "",
+  name2: "",
+  attending: null
+};
 
 var map = '<iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=525+SE+PINE+STREET+PORTLAND,+ORE+97214&amp;aq=&amp;sll=45.54958,-122.85882&amp;sspn=0.034441,0.084543&amp;g=union%2Fpine+portland,+OR&amp;ie=UTF8&amp;hq=&amp;hnear=525+SE+Pine+St,+Portland,+Multnomah,+Oregon+97214&amp;ll=45.520868,-122.66019&amp;spn=0.017229,0.042272&amp;t=m&amp;z=14&amp;output=embed"></iframe><br /><small><a href="https://maps.google.com/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=525+SE+PINE+STREET+PORTLAND,+ORE+97214&amp;aq=&amp;sll=45.54958,-122.85882&amp;sspn=0.034441,0.084543&amp;g=union%2Fpine+portland,+OR&amp;ie=UTF8&amp;hq=&amp;hnear=525+SE+Pine+St,+Portland,+Multnomah,+Oregon+97214&amp;ll=45.520868,-122.66019&amp;spn=0.017229,0.042272&amp;t=m&amp;z=14" style="color:#0000FF;text-align:left">View Larger Map</a></small>';
 
@@ -13,13 +25,20 @@ var loadImages = function () {
   }
 
   loadImage("images/header.png", headerCB);
-}
+};
 
 var loadImage = function (src, cb) {
   $("<img>").load(cb).attr("src", src);
-}
+};
 
-rsvpForm = function () {
+var rsvpForm = function () {
+  $("#rsvp-form").submit(function () {
+    rsvpStatus.name1 = $("#entry_0").val();
+    rsvpStatus.name2 = $("#entry_1").val();
+    rsvpStatus.attending = $("input[name='entry.2.group']:checked").val() == "Yes";
+    rsvpStatus.submitted = true;
+  });
+
   // TODO: Make DRY
   $("#has-plus-one").click(function () {
     $("#additional-guest").toggle($(this).is(":checked"));
@@ -27,4 +46,21 @@ rsvpForm = function () {
   $("#wants-to-help").click(function () {
     $("#help-options").toggle($(this).is(":checked"));
   });
-}
+
+  $("#hidden-iframe").load(function () {
+    if (rsvpStatus.submitted) {
+      $.cookie("rsvpStatus", rsvpStatus);
+      showRsvpStatus();
+    }
+  });
+
+  $("#clear-rsvp").click(function () {
+    $.removeCookie("rsvpStatus");
+  });
+};
+
+var showRsvpStatus = function () {
+  $("#rsvp-form").hide();
+  $("#thank-you").show();
+};
+
