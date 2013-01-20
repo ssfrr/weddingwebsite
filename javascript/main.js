@@ -23,8 +23,8 @@ loadInitials = function () {
     $("header img").animate({top: 8, opacity: 1}, 500, function () {
       $(".column").fadeIn(function () {
         $("#map").append(map);
+        $("body").append('<div class="footer" />');
       });
-      $("body").append('<div class="footer" />');
     });
   }
 

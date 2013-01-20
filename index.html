@@ -13,7 +13,7 @@
     <script src="javascript/main.js"></script>
   </head>
   <body>
-    <div class="column hidden">
+    <div class="column ">
       <nav class="outer">
         <div class="inner">
           <a href="#rsvp">RSVP</a>
@@ -80,29 +80,43 @@
         </form>
 
         <h2 id="schedule">Schedule</h2>
-        <table>
-          <tr>
-              <td>Ceremony</td>
-              <td>4:00</td>
-          </tr>
-          <tr>
-              <td>Cocktails</td>
-              <td>5:00</td>
-          </tr>
-          <tr>
-              <td>Dinner, Toasts, etc.</td>
-              <td>6:00</td>
-          </tr>
-          <tr>
-              <td>Dancing</td>
-              <td>7:30</td>
-          </tr>
-          <tr>
-              <td>Go home safely!</td>
-              <td>11:00</td>
-          </tr>
-        </table>
-
+        <ul id="schedule-table" class="clearfix">
+          <li>
+            <div class="event">
+              Ceremony
+              <span>&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;</span>
+            </div>
+            <div class="time">4:00</div>
+          </li>
+          <li>
+            <div class="event">
+              Cocktails
+              <span>&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;</span>
+            </div>
+            <div class="time">5:00</div>
+          </li>
+          <li>
+            <div class="event">
+              Dinner, Toasts, etc.
+              <span>&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;</span>
+            </div>
+            <div class="time">6:00</div>
+          </li>
+          <li>
+            <div class="event">
+              Dancing
+              <span>&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;</span>
+            </div>
+            <div class="time">7:30</div>
+          </li>
+          <li>
+            <div class="event">
+              Go home safely!
+              <span>&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;</span>
+            </div>
+            <div class="time">11:00</div>
+          </li>
+        </ul>
         <h2 id="location">Location</h2>
         <div id="map"></div>
         <h2 id="hotels">Nearby hotels</h2>
