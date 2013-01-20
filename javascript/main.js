@@ -35,7 +35,7 @@ loadInitials = function () {
     }, 10);
 
     $("header img").fadeIn(800, function () {
-      $(".column, .intro").fadeIn("slow", function () {
+      $(".column").fadeIn("slow", function () {
         loadMap();
       });
     });
