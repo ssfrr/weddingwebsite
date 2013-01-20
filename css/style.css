@@ -1,3 +1,7 @@
+#additional-guest, #help-options {
+  display: none;
+}
+
 /* helpers */
 .clearfix {
   zoom: 1;
