@@ -11,6 +11,7 @@
 
     <script src="javascript/jquery.js"></script>
     <script src="javascript/jquery.cookie.js"></script>
+    <script src="javascript/tinyvalidation.js"></script>
     <script src="javascript/main.js"></script>
   </head>
   <body>
@@ -37,7 +38,7 @@
             <li>
               <label for="entry_0">Your name<span class="ss-required-asterisk">*</span></label>
               <br>
-              <input type="text" name="entry.0.single" value="" id="entry_0">
+              <input type="text" name="entry.0.single" value="" data-validate="notEmpty" id="entry_0">
             </li>
             <li>
               <input type="checkbox" id="has-plus-one" />
@@ -50,7 +51,7 @@
               <label for="entry_2">Attending<span class="ss-required-asterisk">*</span></label>
               <ul>
                 <li>
-                  <label><input type="radio" name="entry.2.group" value="Yes" id="group_2_1">Yes</label>
+                  <label><input type="radio" name="entry.2.group" value="Yes" checked="checked" id="group_2_1">Yes</label>
                 </li>
                 <li>
                   <label><input type="radio" name="entry.2.group" value="No" id="group_2_2">No</label>

@@ -45,7 +45,7 @@ var loadImage = function (src, cb) {
 };
 
 var rsvpForm = function () {
-  $("#rsvp-form").submit(function () {
+  $("#rsvp-form").tinyValidation({validateOnKeyUp: true}).submit(function () {
     rsvpStatus.name1 = $("#entry_0").val();
     rsvpStatus.name2 = $("#entry_1").val();
     rsvpStatus.attending = $("input[name='entry.2.group']:checked").val() == "Yes";
