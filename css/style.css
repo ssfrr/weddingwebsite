@@ -1,0 +1,9 @@
+body {
+  background: #fcf1e3;
+}
+
+header {
+  width: 100%;
+  height: 185px;
+  background: url(/images/header.png) repeat-x;
+}
