@@ -26,6 +26,10 @@
   left: -50%;
 }
 
+.hidden {
+  display: none;
+}
+
 /* elements */
 html {
   min-height: 100%;
