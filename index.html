@@ -11,6 +11,7 @@
 
     <script src="javascript/jquery.js"></script>
     <script src="javascript/jquery.cookie.js"></script>
+    <script src="javascript/tinyvalidation.js"></script>
     <script src="javascript/main.js"></script>
   </head>
   <body>
@@ -21,7 +22,7 @@
           <a href="#location">Location</a>
           <a href="#hotels">Nearby hotels</a>
           <a href="#portland">Fun things to do in Portland</a>
-          <a href="#registry">Registry</a>
+          <a href="#gifts">Gifts</a>
         </div>
       </nav>
       <div class="content">
@@ -37,7 +38,7 @@
             <li>
               <label for="entry_0">Your name<span class="ss-required-asterisk">*</span></label>
               <br>
-              <input type="text" name="entry.0.single" value="" id="entry_0">
+              <input type="text" name="entry.0.single" value="" data-validate="notEmpty" id="entry_0">
             </li>
             <li>
               <input type="checkbox" id="has-plus-one" />
@@ -50,7 +51,7 @@
               <label for="entry_2">Attending<span class="ss-required-asterisk">*</span></label>
               <ul>
                 <li>
-                  <label><input type="radio" name="entry.2.group" value="Yes" id="group_2_1">Yes</label>
+                  <label><input type="radio" name="entry.2.group" value="Yes" checked="checked" id="group_2_1">Yes</label>
                 </li>
                 <li>
                   <label><input type="radio" name="entry.2.group" value="No" id="group_2_2">No</label>
@@ -140,7 +141,9 @@
             <li><a href="http://goatlandia.com/">Goatlandia</a></li>
         </ul>
         <h2 id="portland">Fun things to do in Portland</h2>
-        <h2 id="registry">Registry</h2>
+        <h2 id="gifts">Gifts</h2>
+        <p>Your presence at our celebration is gift enough, but if you would like to make a contribution towards our honeymoon fund you may do so
+        <a href="https://www.smartypig.com/find-users/contribute?userId=f2ec8df2-4ac8-439b-967d-b0cb83563e8c&goalId=4931c0b4-b991-4ea6-845c-442482fc0e2c">here</a>.</p>
       </div>
     </div>
     </body>
