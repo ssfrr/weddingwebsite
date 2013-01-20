@@ -25,10 +25,11 @@
       </nav>
       <div class="content">
         <h2 id="rsvp">RSVP</h2>
-        <form action="https://docs.google.com/a/nicholasbs.net/spreadsheet/formResponse?formkey=dHI2MUVuRV9BbU5LMmk4enplYzZ2Mmc6MQ&amp;ifq" method="POST" id="ss-form">
+        <form class="clearfix" action="https://docs.google.com/a/nicholasbs.net/spreadsheet/formResponse?formkey=dHI2MUVuRV9BbU5LMmk4enplYzZ2Mmc6MQ&amp;ifq" method="POST" id="ss-form">
           <ol>
             <li>
               <label for="entry_0">Your name<span class="ss-required-asterisk">*</span></label>
+              <br>
               <input type="text" name="entry.0.single" value="" id="entry_0">
             </li>
             <li>
@@ -51,7 +52,8 @@
             </li>
             <li>
               <label for="entry_3">Dietary Restrictions</label>
-              <textarea name="entry.3.single" rows="8" cols="75" id="entry_3"></textarea>
+              <br>
+              <textarea name="entry.3.single" rows="3" cols="75" id="entry_3"></textarea>
             </li>
             <li>
               <label for="wants-to-help"><input type="checkbox" id="wants-to-help" />I would like to help</label>
@@ -120,5 +122,5 @@
         <h2 id="registry">Registry</h2>
       </div>
     </div>
-  </body>
+    </body>
 </html>

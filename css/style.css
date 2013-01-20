@@ -3,6 +3,12 @@
 }
 
 /* helpers */
+* {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
 .clearfix {
   zoom: 1;
 }
@@ -61,7 +67,30 @@ html {
 body {
   min-height: 100%;
   background: #fcf1e3;
+  background: -moz-linear-gradient(top,#fcf1e3 0,#ebdfd0 100%);
+  background: -webkit-gradient(linear,left top,left bottom,color-stop(0%,#fcf1e3),color-stop(100%,#ebdfd0));
+  background: -webkit-linear-gradient(top,#fcf1e3 0,#ebdfd0 100%);
+  background: -o-linear-gradient(top,#fcf1e3 0,#ebdfd0 100%);
+  background: -ms-linear-gradient(top,#fcf1e3 0,#ebdfd0 100%);
+  background: linear-gradient(to bottom,#fcf1e3 0,#ebdfd0 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fcf1e3', endColorstr='#ebdfd0', GradientType=0);
   font-family: london;
+  font-size: 18px;
+}
+
+input, textarea {
+  padding: 5px;
+  border: 1px solid #b2a493;
+  resize: none;
+  border-radius: 4px;
+}
+
+input:focus, textarea:focus {
+  border: 1px solid #8dbca5;
+  outline: none;
+  -moz-box-shadow: 0 0 3px rgba(141,188,165,.5);
+  -webkit-box-shadow: 0 0 3px rgba(141,188,165,.5);
+  box-shadow: 0 0 3px rgba(141,188,165,.5);
 }
 
 h2 {
@@ -70,6 +99,109 @@ h2 {
   font-family: neou;
   font-size: 30px;
 }
+
+a {
+  color: #8dbca5;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* rsvp form */
+form {
+  background: rgba(255,255,255,0.4);
+  border-radius: 4px;
+  padding: 20px;
+  width: 50%;
+}
+
+form ol, form li {
+  float: left;
+  width: 100%;
+}
+
+form li {
+  float: left;
+  clear: both;
+  margin-top: 20px;
+}
+
+form li:first-child {
+  margin-top: 0;
+}
+
+form ul li {
+  margin-top: 5px;
+}
+
+form ul {
+  float: left;
+  clear: both;
+  margin-top: 5px;
+}
+
+form input {
+  float: left;
+}
+
+form input[type=text], form textarea {
+  width: 100%;
+}
+
+form input[type=checkbox], form input[type=radio] {
+  position: relative;
+  bottom: 2px;
+  margin-right: 5px;
+}
+
+form label {
+  float: left;
+}
+
+#entry_0, #additional-guest input {
+  width: 50%;
+}
+
+#additional-guest input {
+  margin-left: 5px;
+  position: relative;
+  bottom: 5px;
+}
+
+#additional-guest, #help-options {
+  width: 100%;
+  margin-left: 10px;
+}
+
+#help-options li {
+  margin-top: 8px;
+}
+
+#help-options input[type=text] {
+  width: 65%;
+  margin-left: 5px;
+  position: relative;
+  bottom: 5px;
+}
+
+#help-options input[type=checkbox] {
+  bottom: 1px;
+}
+
+
+form input[type=submit] {
+  padding: 5px 10px;
+  background: #8dbca5;
+  border-color: #89ad9b;
+  color: white;
+  font-size: 14px;
+  text-transform: lowercase;
+  cursor: pointer;
+}
+
+/* /rsvp form */
 
 header {
   width: 100%;
@@ -94,14 +226,13 @@ header img {
 
 nav {
   margin-top: 20px;
+  font-size: 18px;
   text-transform: lowercase;
 }
 
 nav a {
   float: left;
   margin-left: 20px;
-  color: #8dbca5; 
-  text-decoration: none;
 }
 
 nav a:first-child {
