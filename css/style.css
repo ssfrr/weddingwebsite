@@ -23,8 +23,13 @@
 }
 
 /* elements */
+html {
+  min-height: 100%;
+}
+
 body {
-  background: #fcf1e3;
+  min-height: 100%;
+  background: #fcf1e3 url(/images/footer.png) center bottom repeat-x;
 }
 
 header {
@@ -59,4 +64,5 @@ nav a:first-child {
   clear: both;
   width: 100%;
   margin-top: 50px;
+  margin-bottom: 200px;
 }
