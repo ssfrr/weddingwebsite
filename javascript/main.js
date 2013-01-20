@@ -1,6 +1,7 @@
 $(document).ready(function () {
   rsvpForm();
   loadImages();
+  scroll();
 
   $.cookie.json = true;
 
@@ -29,18 +30,26 @@ loadInitials = function () {
   var initialsImage = "images/initials-banner.png"
   initialsCB = function () {
     $("header").append("<img class='offset hidden' src='"+initialsImage+"'>");
+
     setTimeout(function () {
       $("header img").removeClass("offset");
     }, 10);
+
     $("header img").fadeIn(800, function () {
       $(".column").fadeIn("slow", function () {
-        $("#map").append(map);
-        $("body").append('<div class="footer" />');
+        loadMap();
       });
     });
   }
 
   loadImage(initialsImage, initialsCB);
+}
+
+loadMap = function () {
+  if ($("#map").html() == '') {
+    $("#map").append(map);
+    $("body").append('<div class="footer" />');
+  }
 }
 
 var loadImage = function (src, cb) {
@@ -95,3 +104,12 @@ var showRsvpStatus = function () {
   $("#rsvp-status").html(statusText);
 };
 
+var scroll = function () {
+  $("nav a").click(function(e) {
+    e.preventDefault();
+
+    clicked = $(e.target).attr("href").replace("#", "");
+    pos = $("#" + clicked).position().top + 200;
+    $("html, body").animate({scrollTop: pos}, 600, "swing");
+  });
+}
