@@ -8,11 +8,23 @@ var map = '<iframe width="425" height="350" frameborder="0" scrolling="no" margi
 loadImages = function () {
   headerCB = function () {
     $("body").prepend("<header class='hidden' />");
-    $("header").fadeIn("slow");
-    $("#map").append(map);
+    $("header").fadeIn("slow", function () {
+      //$("#map").append(map);
+      loadInitials();
+    });
   }
 
-  loadImage("/images/header.png", headerCB);
+  loadImage("images/header.png", headerCB);
+}
+
+loadInitials = function () {
+  var initialsImage = "images/initials-banner.png"
+  initialsCB = function () {
+    $("header").append("<img src='"+initialsImage+"'>");
+    $("header img").animate({top: 10, opacity: 1}, 500);
+  }
+
+  loadImage(initialsImage, initialsCB);
 }
 
 loadImage = function (src, cb) {

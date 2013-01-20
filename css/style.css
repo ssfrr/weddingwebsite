@@ -37,19 +37,21 @@ html {
 
 body {
   min-height: 100%;
+  background: #fcf1e3;
 }
 
 header {
   width: 100%;
   height: 185px;
-  background: url(/images/header.png) repeat-x;
+  background: url(../images/header.png) repeat-x;
 }
 
-header .initials-banner {
+header img {
   position: absolute;
-  top: 10px;
+  top: 0;
   left: 50%;
   margin-left: -165px;
+  opacity: 0;
 }
 
 .column {
@@ -84,5 +86,5 @@ nav a:first-child {
 .footer {
   width: 100%;
   height: 177px;
-  background: url(/images/footer.png) 0 center repeat-x;
+  background: url(../images/footer.png) 0 center repeat-x;
 }
