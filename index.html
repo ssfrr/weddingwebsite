@@ -14,7 +14,7 @@
     <script src="javascript/main.js"></script>
   </head>
   <body>
-    <div class="column">
+    <div class="column hidden">
       <nav class="outer">
         <div class="inner">
           <a href="#rsvp">RSVP</a>
@@ -28,13 +28,15 @@
         <h2 id="rsvp">RSVP</h2>
         <iframe id="hidden-iframe" name="hidden-iframe"></iframe>
         <div id="thank-you">
-          Thanks for responding!
+          <p>Thanks for responding!</p>
+          <p id="rsvp-status"></p> 
           <a href="" id="clear-rsvp">Clear RSVP</a>
         </div>
-        <form action="https://docs.google.com/a/nicholasbs.net/spreadsheet/formResponse?formkey=dHI2MUVuRV9BbU5LMmk4enplYzZ2Mmc6MQ&amp;ifq" method="POST" target="hidden-iframe" id="rsvp-form">
+        <form class="clearfix" action="https://docs.google.com/a/nicholasbs.net/spreadsheet/formResponse?formkey=dHI2MUVuRV9BbU5LMmk4enplYzZ2Mmc6MQ&amp;ifq" method="POST" target="hidden-iframe" id="rsvp-form">
           <ol>
             <li>
               <label for="entry_0">Your name<span class="ss-required-asterisk">*</span></label>
+              <br>
               <input type="text" name="entry.0.single" value="" id="entry_0">
             </li>
             <li>
@@ -57,7 +59,8 @@
             </li>
             <li>
               <label for="entry_3">Dietary Restrictions</label>
-              <textarea name="entry.3.single" rows="8" cols="75" id="entry_3"></textarea>
+              <br>
+              <textarea name="entry.3.single" rows="3" cols="75" id="entry_3"></textarea>
             </li>
             <li>
               <label for="wants-to-help"><input type="checkbox" id="wants-to-help" />I would like to help</label>
@@ -69,7 +72,7 @@
                   <label><input type="checkbox" name="entry.4.group" value="Clean-up" id="group_4_2">Clean-up</label>
                 </li>
                 <li>
-                  <label><input type="checkbox" name="entry.4.group" value="Out-of-town Guest Host" id="group_4_3">Out-of-town Guest Host</label>
+                  <label><input type="checkbox" name="entry.4.group" value="Host an out-of-town guest" id="group_4_3">Host an out-of-town guest</label>
                 </li>
                 <li>
                   <input type="checkbox" name="entry.4.group" value="__option__" id="other_option:4"><label for="other_option:4">Other:</label>
@@ -126,6 +129,5 @@
         <h2 id="registry">Registry</h2>
       </div>
     </div>
-    <div class="footer"></div>
-  </body>
+    </body>
 </html>

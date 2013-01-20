@@ -15,17 +15,33 @@ var rsvpStatus = {
   attending: null
 };
 
-var map = '<iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=525+SE+PINE+STREET+PORTLAND,+ORE+97214&amp;aq=&amp;sll=45.54958,-122.85882&amp;sspn=0.034441,0.084543&amp;g=union%2Fpine+portland,+OR&amp;ie=UTF8&amp;hq=&amp;hnear=525+SE+Pine+St,+Portland,+Multnomah,+Oregon+97214&amp;ll=45.520868,-122.66019&amp;spn=0.017229,0.042272&amp;t=m&amp;z=14&amp;output=embed"></iframe><br /><small><a href="https://maps.google.com/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=525+SE+PINE+STREET+PORTLAND,+ORE+97214&amp;aq=&amp;sll=45.54958,-122.85882&amp;sspn=0.034441,0.084543&amp;g=union%2Fpine+portland,+OR&amp;ie=UTF8&amp;hq=&amp;hnear=525+SE+Pine+St,+Portland,+Multnomah,+Oregon+97214&amp;ll=45.520868,-122.66019&amp;spn=0.017229,0.042272&amp;t=m&amp;z=14" style="color:#0000FF;text-align:left">View Larger Map</a></small>';
+var map = '<iframe width="640" height="480" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps/ms?msa=0&amp;msid=201398888939559602086.0004d3ba372798380cf15&amp;ie=UTF8&amp;t=m&amp;ll=45.540143,-122.66201&amp;spn=0.057712,0.109863&amp;z=13&amp;output=embed"></iframe><br /><small>View <a href="https://maps.google.com/maps/ms?msa=0&amp;msid=201398888939559602086.0004d3ba372798380cf15&amp;ie=UTF8&amp;t=m&amp;ll=45.540143,-122.66201&amp;spn=0.057712,0.109863&amp;z=13&amp;source=embed" style="text-align:left">Kate and Spencers Wedding Map</a> in a larger map</small>';
 
 var loadImages = function () {
   var headerCB = function () {
     $("body").prepend("<header class='hidden' />");
-    $("header").fadeIn("slow");
-    $("#map").append(map);
+    $("header").fadeIn("slow", function () {
+      loadInitials();
+    });
   }
 
   loadImage("images/header.png", headerCB);
 };
+
+loadInitials = function () {
+  var initialsImage = "images/initials-banner.png"
+  initialsCB = function () {
+    $("header").append("<img src='"+initialsImage+"'>");
+    $("header img").animate({top: 8, opacity: 1}, 500, function () {
+      $(".column").fadeIn(function () {
+        $("#map").append(map);
+      });
+      $("body").append('<div class="footer" />');
+    });
+  }
+
+  loadImage(initialsImage, initialsCB);
+}
 
 var loadImage = function (src, cb) {
   $("<img>").load(cb).attr("src", src);
@@ -62,5 +78,19 @@ var rsvpForm = function () {
 var showRsvpStatus = function () {
   $("#rsvp-form").hide();
   $("#thank-you").show();
+
+  var statusText = rsvpStatus.name1;
+  if (rsvpStatus.name2) {
+    statusText += " and " + rsvpStatus.name2 + " are ";
+  } else {
+    statusText += " is ";
+  }
+  if (rsvpStatus.attending) {
+    statusText += "attending.";
+  } else {
+    statusText += "not attending.";
+  }
+
+  $("#rsvp-status").html(statusText);
 };
 
