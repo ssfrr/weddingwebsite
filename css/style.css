@@ -1,3 +1,72 @@
 #additional-guest, #help-options {
   display: none;
 }
+
+/* helpers */
+.clearfix {
+  zoom: 1;
+}
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.outer {
+  float: left;
+  clear: both;
+  position: relative;
+  left: 50%;
+}
+
+.inner {
+  float: left;
+  position: relative;
+  left: -50%;
+}
+
+/* elements */
+html {
+  min-height: 100%;
+}
+
+body {
+  min-height: 100%;
+  background: #fcf1e3 url(/images/footer.png) center bottom repeat-x;
+}
+
+header {
+  width: 100%;
+  height: 185px;
+  background: url(/images/header.png) repeat-x;
+}
+
+.column {
+  width: 1000px;
+  margin: 0 auto 50px;
+  position: relative;
+  overflow: hidden;
+}
+
+nav {
+  padding: 20px 0;
+}
+
+nav a {
+  float: left;
+  margin-left: 20px;
+}
+
+
+nav a:first-child {
+  margin-left: 0;
+}
+
+.content {
+  float: left;
+  clear: both;
+  width: 100%;
+  margin-top: 50px;
+  margin-bottom: 200px;
+}

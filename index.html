@@ -13,61 +13,118 @@
   </head>
 
   <body>
-    <h2>RSVP</h2>
-    <form action="https://docs.google.com/a/nicholasbs.net/spreadsheet/formResponse?formkey=dHI2MUVuRV9BbU5LMmk4enplYzZ2Mmc6MQ&amp;ifq" method="POST" id="ss-form">
-      <ol>
-        <li>
-          <label for="entry_0">Your name<span class="ss-required-asterisk">*</span></label>
-          <input type="text" name="entry.0.single" value="" id="entry_0">
-        </li>
-        <li>
-          <input type="checkbox" id="has-plus-one" />
-          <label for="has-plus-one">I received an invitation for two guests</label>
-        <li id="additional-guest">
-          <label for="entry_1">Additional guest name</label>
-          <input type="text" name="entry.1.single" value="" id="entry_1">
-        </li>
-        <li>
-          <label for="entry_2">Attending<span class="ss-required-asterisk">*</span></label>
-          <ul>
+  </head>
+
+  <body>
+    <header>
+    </header>
+    <div class="column">
+      <nav class="outer">
+        <div class="inner">
+          <a href="#rsvp">RSVP</a>
+          <a href="#locations">Location</a>
+          <a href="#hotels">Nearby hotels</a>
+          <a href="#portland">Fun things to do in Portland</a>
+          <a href="#registry">Registry</a>
+        </div>
+      </nav>
+      <div class="content">
+        <h2 id="rsvp">RSVP</h2>
+        <form action="https://docs.google.com/a/nicholasbs.net/spreadsheet/formResponse?formkey=dHI2MUVuRV9BbU5LMmk4enplYzZ2Mmc6MQ&amp;ifq" method="POST" id="ss-form">
+          <ol>
             <li>
-              <label><input type="radio" name="entry.2.group" value="Yes" id="group_2_1">Yes</label>
+              <label for="entry_0">Your name<span class="ss-required-asterisk">*</span></label>
+              <input type="text" name="entry.0.single" value="" id="entry_0">
             </li>
             <li>
-              <label><input type="radio" name="entry.2.group" value="No" id="group_2_2">No</label>
-            </li>
-          </ul>
-        </li>
-        <li>
-          <label for="entry_3">Dietary Restrictions</label>
-          <textarea name="entry.3.single" rows="8" cols="75" id="entry_3"></textarea>
-        </li>
-        <li>
-          <label for="wants-to-help"><input type="checkbox" id="wants-to-help" />I would like to help</label>
-          <ul id="help-options">
-            <li>
-              <label><input type="checkbox" name="entry.4.group" value="Set-up" id="group_4_1">Set-up</label>
+              <input type="checkbox" id="has-plus-one" />
+              <label for="has-plus-one">I received an invitation for two guests</label>
+            <li id="additional-guest">
+              <label for="entry_1">Additional guest name</label>
+              <input type="text" name="entry.1.single" value="" id="entry_1">
             </li>
             <li>
-              <label><input type="checkbox" name="entry.4.group" value="Clean-up" id="group_4_2">Clean-up</label>
+              <label for="entry_2">Attending<span class="ss-required-asterisk">*</span></label>
+              <ul>
+                <li>
+                  <label><input type="radio" name="entry.2.group" value="Yes" id="group_2_1">Yes</label>
+                </li>
+                <li>
+                  <label><input type="radio" name="entry.2.group" value="No" id="group_2_2">No</label>
+                </li>
+              </ul>
             </li>
             <li>
-              <label><input type="checkbox" name="entry.4.group" value="Out-of-town Guest Host" id="group_4_3">Out-of-town Guest Host</label>
+              <label for="entry_3">Dietary Restrictions</label>
+              <textarea name="entry.3.single" rows="8" cols="75" id="entry_3"></textarea>
             </li>
             <li>
-              <input type="checkbox" name="entry.4.group" value="__option__" id="other_option:4"><label for="other_option:4">Other:</label>
-              <input type="text" name="entry.4.group.other_option_" value="">
+              <label for="wants-to-help"><input type="checkbox" id="wants-to-help" />I would like to help</label>
+              <ul id="help-options">
+                <li>
+                  <label><input type="checkbox" name="entry.4.group" value="Set-up" id="group_4_1">Set-up</label>
+                </li>
+                <li>
+                  <label><input type="checkbox" name="entry.4.group" value="Clean-up" id="group_4_2">Clean-up</label>
+                </li>
+                <li>
+                  <label><input type="checkbox" name="entry.4.group" value="Out-of-town Guest Host" id="group_4_3">Out-of-town Guest Host</label>
+                </li>
+                <li>
+                  <input type="checkbox" name="entry.4.group" value="__option__" id="other_option:4"><label for="other_option:4">Other:</label>
+                  <input type="text" name="entry.4.group.other_option_" value="">
+                </li>
+              </ul>
             </li>
-          </ul>
-        </li>
-        <li>
-          <input type="submit" name="submit" value="Submit">
-        </li>
-      </ol>
-    </form>
-    <h2>Location</h2>
-    <h2>Nearby hotels</h2>
-    <h2>Fun things to do in Portland</h2>
-    <h2>Registry</h2>
+            <li>
+              <input type="submit" name="submit" value="Submit">
+            </li>
+          </ol>
+        </form>
+
+        <h2 id="schedule">Schedule</h2>
+        <table>
+          <tr>
+              <td>Ceremony</td>
+              <td>4:00</td>
+          </tr>
+          <tr>
+              <td>Cocktails</td>
+              <td>5:00</td>
+          </tr>
+          <tr>
+              <td>Dinner, Toasts, etc.</td>
+              <td>6:00</td>
+          </tr>
+          <tr>
+              <td>Dancing</td>
+              <td>7:30</td>
+          </tr>
+          <tr>
+              <td>Go home safely!</td>
+              <td>11:00</td>
+          </tr>
+        </table>
+
+        <h2 id="location">Location</h2>
+        <iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=525+SE+PINE+STREET+PORTLAND,+ORE+97214&amp;aq=&amp;sll=45.54958,-122.85882&amp;sspn=0.034441,0.084543&amp;g=union%2Fpine+portland,+OR&amp;ie=UTF8&amp;hq=&amp;hnear=525+SE+Pine+St,+Portland,+Multnomah,+Oregon+97214&amp;ll=45.520868,-122.66019&amp;spn=0.017229,0.042272&amp;t=m&amp;z=14&amp;output=embed"></iframe><br /><small><a href="https://maps.google.com/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=525+SE+PINE+STREET+PORTLAND,+ORE+97214&amp;aq=&amp;sll=45.54958,-122.85882&amp;sspn=0.034441,0.084543&amp;g=union%2Fpine+portland,+OR&amp;ie=UTF8&amp;hq=&amp;hnear=525+SE+Pine+St,+Portland,+Multnomah,+Oregon+97214&amp;ll=45.520868,-122.66019&amp;spn=0.017229,0.042272&amp;t=m&amp;z=14" style="color:#0000FF;text-align:left">View Larger Map</a></small>
+
+        <h2 id="hotels">Nearby hotels</h2>
+        <ul>
+            <li><a href="http://doubletree3.hilton.com/en/hotels/oregon/doubletree-by-hilton-hotel-portland-RLLC-DT">Double Tree</a></li>
+            <li><a href="http://www.marriott.com/hotels/travel/pdxcl-courtyard-portland-downtown-convention-center">Courtyard Marriot</a></li>
+            <li><a href="http://www.redlion.com/our-hotels/oregon/portland-convention-center">Red Lion Hotel</a></li>
+            <li><a href="http://www.eastsidelodge.com">Eastside Lodge</a></li>
+            <li><a href="https://www.hotelfifty.com">Hotel Fifty</a></li>
+            <li><a href="http://www.hotellucia.com">Hotel Lucia</a></li>
+            <li><a href="http://www.everettstreetguesthouse.com">Everett St Guest House</a></li>
+            <li><a href="http://www.acehotel.com/portland">Ace Hotel</a></li>
+            <li><a href="https://www.airbnb.com/s?location=Portland%2C+OR&checkin=&checkout=&guests=1">AirBnB</a></li>
+            <li><a href="http://goatlandia.com/">Goatlandia</a></li>
+        </ul>
+        <h2 id="portland">Fun things to do in Portland</h2>
+        <h2 id="registry">Registry</h2>
+      </div>
+    </div>
   </body>
 </html>
