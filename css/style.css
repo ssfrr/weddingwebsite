@@ -1,4 +1,4 @@
-#additional-guest, #help-options {
+#additional-guest, #help-options, #hidden-iframe, #thank-you {
   display: none;
 }
 
@@ -76,6 +76,11 @@ body {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fcf1e3', endColorstr='#ebdfd0', GradientType=0);
   font-family: london;
   font-size: 18px;
+  color: #4e3f42;
+}
+
+em {
+  font-style: italic;
 }
 
 input, textarea {
@@ -93,8 +98,19 @@ input:focus, textarea:focus {
   box-shadow: 0 0 3px rgba(141,188,165,.5);
 }
 
+input.error, textarea.error {
+  border-color: red;
+  -moz-box-shadow: 0 0 3px rgba(255,0,0,.5);
+  -webkit-box-shadow: 0 0 3px rgba(255,0,0,.5);
+  box-shadow: 0 0 3px rgba(255,0,0,.5);
+}
+
+.ss-required-asterisk {
+  color: red;
+}
+
 h2 {
-  margin-top: 50px;
+  padding-top: 50px;
   margin-bottom: 10px;
   font-family: neou;
   font-size: 30px;
@@ -114,7 +130,7 @@ form {
   background: rgba(255,255,255,0.4);
   border-radius: 4px;
   padding: 20px;
-  width: 50%;
+  width: 100%;
 }
 
 form ol, form li {
@@ -190,7 +206,6 @@ form label {
   bottom: 1px;
 }
 
-
 form input[type=submit] {
   padding: 5px 10px;
   background: #8dbca5;
@@ -201,7 +216,40 @@ form input[type=submit] {
   cursor: pointer;
 }
 
+form input[type=submit][disabled] {
+  cursor: default;
+  opacity: 0.5;
+}
+
 /* /rsvp form */
+
+/* schedule */
+#schedule-table {
+}
+
+#schedule-table li {
+  float: left;
+  clear: both;
+  margin-top: 5px;
+}
+
+.event {
+  float: left;
+  width: 300px;
+  position: relative;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.event span {
+  color: gray;
+  font-size: 13px;
+}
+
+.time {
+  float: right;
+  padding-left: 5px;
+}
 
 header {
   width: 100%;
@@ -211,14 +259,23 @@ header {
 
 header img {
   position: absolute;
-  top: 0;
+  top: 8px;
   left: 50%;
   margin-left: -165px;
-  opacity: 0;
+
+  -webkit-transition: top 0.8s linear;
+  -moz-transition: top 0.8s linear;
+  -o-transition: top 0.8s linear;
+  -ms-transition: top 0.8s linear;
+  transition: top 0.8s linear;
+}
+
+header img.offset {
+  top: 0;
 }
 
 .column {
-  width: 1000px;
+  width: 640px;
   margin: 0 auto 50px;
   position: relative;
   overflow: hidden;
@@ -239,16 +296,46 @@ nav a:first-child {
   margin-left: 0;
 }
 
+.intro {
+  float: left;
+  margin-top: 20px;
+}
+
+.intro h2 {
+  margin-bottom: 0;
+}
+
+.intro p {
+  margin-top: 20px;
+  font-size: 20px;
+}
+
+.intro img {
+  position: relative;
+  top: 40px;
+  left: 50%;
+  margin-left: -200px;
+}
+
 .content {
   float: left;
   clear: both;
   width: 100%;
+  min-height: 1880px;
   margin-top: 20px;
-  margin-bottom: 200px;
+}
+
+/* google maps helper text */
+small {
+  font-size: 14px;
 }
 
 .footer {
   width: 100%;
   height: 177px;
   background: url(../images/footer.png) 0 center repeat-x;
+}
+
+.apostrophe {
+  font-family: times;
 }

@@ -5,11 +5,14 @@
     <meta name="description" container="Wedding website for Spencer Russell and Kate Millington" />
 
     <title>Kate and Spencer's Wedding</title>
+    <link rel="icon" href="/favicon.ico">
 
     <link rel="stylesheet" href="./css/reset.css" />
     <link rel="stylesheet" href="./css/style.css" />
 
     <script src="javascript/jquery.js"></script>
+    <script src="javascript/jquery.cookie.js"></script>
+    <script src="javascript/tinyvalidation.js"></script>
     <script src="javascript/main.js"></script>
   </head>
   <body>
@@ -17,24 +20,38 @@
       <nav class="outer">
         <div class="inner">
           <a href="#rsvp">RSVP</a>
+          <a href="#schedule">Schedule</a>
           <a href="#location">Location</a>
           <a href="#hotels">Nearby hotels</a>
           <a href="#portland">Fun things to do in Portland</a>
-          <a href="#registry">Registry</a>
+          <a href="#gifts">Gifts</a>
         </div>
       </nav>
+      <div class="intro">
+        <h2 id="intro">Kate &amp; Spencer's Wedding Website</h2>
+        <p>Thanks for visiting our wedding website. Our wedding will take place October 12, 2013 in Portland, Oregon. You can use this site to RSVP and get information about the venue and nearby hotels. We<span class="apostrophe">'</span>ve also listed a few fun activities to do while  you<span class="apostrophe">'</span>re in Portland.</p>
+        <p>Thanks so much for being part of our special day. We are truly blessed to have so many lovely and caring friends and family members. We can<span class="apostrophe">'</span>t wait to see you!</p>
+        <p><em>&ndash; Kate &amp; Spencer</em></p>
+        <img src="images/intro-separator.png">
+      </div>
       <div class="content">
         <h2 id="rsvp">RSVP</h2>
-        <form class="clearfix" action="https://docs.google.com/a/nicholasbs.net/spreadsheet/formResponse?formkey=dHI2MUVuRV9BbU5LMmk4enplYzZ2Mmc6MQ&amp;ifq" method="POST" id="ss-form">
+        <iframe id="hidden-iframe" name="hidden-iframe"></iframe>
+        <div id="thank-you">
+          <p>Thanks for responding!</p>
+          <p id="rsvp-status"></p>
+          <a href="" id="clear-rsvp">Change your RSVP</a>
+        </div>
+        <form class="clearfix" action="https://docs.google.com/a/nicholasbs.net/spreadsheet/formResponse?formkey=dHI2MUVuRV9BbU5LMmk4enplYzZ2Mmc6MQ&amp;ifq" method="POST" target="hidden-iframe" id="rsvp-form">
           <ol>
             <li>
               <label for="entry_0">Your name<span class="ss-required-asterisk">*</span></label>
               <br>
-              <input type="text" name="entry.0.single" value="" id="entry_0">
+              <input type="text" name="entry.0.single" value="" data-validate="notEmpty" id="entry_0">
             </li>
             <li>
               <input type="checkbox" id="has-plus-one" />
-              <label for="has-plus-one">I received an invitation for two guests</label>
+              <label for="has-plus-one">I received an invitation for an additional guest</label>
             <li id="additional-guest">
               <label for="entry_1">Additional guest name</label>
               <input type="text" name="entry.1.single" value="" id="entry_1">
@@ -43,7 +60,7 @@
               <label for="entry_2">Attending<span class="ss-required-asterisk">*</span></label>
               <ul>
                 <li>
-                  <label><input type="radio" name="entry.2.group" value="Yes" id="group_2_1">Yes</label>
+                  <label><input type="radio" name="entry.2.group" value="Yes" checked="checked" id="group_2_1">Yes</label>
                 </li>
                 <li>
                   <label><input type="radio" name="entry.2.group" value="No" id="group_2_2">No</label>
@@ -80,29 +97,44 @@
         </form>
 
         <h2 id="schedule">Schedule</h2>
-        <table>
-          <tr>
-              <td>Ceremony</td>
-              <td>4:00</td>
-          </tr>
-          <tr>
-              <td>Cocktails</td>
-              <td>5:00</td>
-          </tr>
-          <tr>
-              <td>Dinner, Toasts, etc.</td>
-              <td>6:00</td>
-          </tr>
-          <tr>
-              <td>Dancing</td>
-              <td>7:30</td>
-          </tr>
-          <tr>
-              <td>Go home safely!</td>
-              <td>11:00</td>
-          </tr>
-        </table>
-
+        <h3>Saturday, Oct 12, 2013</h3>
+        <ul id="schedule-table" class="clearfix">
+          <li>
+            <div class="event">
+              Ceremony
+              <span>&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;</span>
+            </div>
+            <div class="time">4:00</div>
+          </li>
+          <li>
+            <div class="event">
+              Cocktails
+              <span>&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;</span>
+            </div>
+            <div class="time">5:00</div>
+          </li>
+          <li>
+            <div class="event">
+              Dinner, Toasts, etc.
+              <span>&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;</span>
+            </div>
+            <div class="time">6:00</div>
+          </li>
+          <li>
+            <div class="event">
+              Dancing
+              <span>&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;</span>
+            </div>
+            <div class="time">7:30</div>
+          </li>
+          <li>
+            <div class="event">
+              Go home safely!
+              <span>&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;</span>
+            </div>
+            <div class="time">11:00</div>
+          </li>
+        </ul>
         <h2 id="location">Location</h2>
         <div id="map"></div>
         <h2 id="hotels">Nearby hotels</h2>
@@ -119,7 +151,9 @@
             <li><a href="http://goatlandia.com/">Goatlandia</a></li>
         </ul>
         <h2 id="portland">Fun things to do in Portland</h2>
-        <h2 id="registry">Registry</h2>
+        <h2 id="gifts">Gifts</h2>
+        <p>Your presence at our celebration is gift enough, but if you would like to make a contribution towards our honeymoon fund you may do so
+        <a href="https://www.smartypig.com/find-users/contribute?userId=f2ec8df2-4ac8-439b-967d-b0cb83563e8c&goalId=4931c0b4-b991-4ea6-845c-442482fc0e2c">here</a>.</p>
       </div>
     </div>
     </body>
