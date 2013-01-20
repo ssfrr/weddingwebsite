@@ -1,6 +1,7 @@
 $(document).ready(function () {
   rsvpForm();
   loadImages();
+  scroll();
 
   $.cookie.json = true;
 
@@ -103,3 +104,12 @@ var showRsvpStatus = function () {
   $("#rsvp-status").html(statusText);
 };
 
+var scroll = function () {
+  $("nav a").click(function(e) {
+    e.preventDefault();
+
+    clicked = $(e.target).attr("href").replace("#", "");
+    pos = $("#" + clicked).position().top + 200;
+    $("html, body").animate({scrollTop: pos}, 600, "swing");
+  });
+}
