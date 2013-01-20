@@ -23,7 +23,7 @@ var loadImages = function () {
     });
   }
 
-  loadImage("images/header.png", headerCB);
+  loadImage("images/trees.png", headerCB);
 };
 
 loadInitials = function () {
