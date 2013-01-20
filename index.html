@@ -6,12 +6,65 @@
 
     <title>Kate and Spencer's Wedding</title>
 
-    <link rel="stylesheet" href="css/reset.css" />
-    <link rel="stylesheet" href="css/styles.css" />
+    <script src="javascript/jquery.js"></script>
+    <script src="javascript/main.js"></script>
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/style.css" />
   </head>
 
   <body>
     <h2>RSVP</h2>
+    <form action="https://docs.google.com/a/nicholasbs.net/spreadsheet/formResponse?formkey=dHI2MUVuRV9BbU5LMmk4enplYzZ2Mmc6MQ&amp;ifq" method="POST" id="ss-form">
+      <ol>
+        <li>
+          <label for="entry_0">Your name<span class="ss-required-asterisk">*</span></label>
+          <input type="text" name="entry.0.single" value="" id="entry_0">
+        </li>
+        <li>
+          <input type="checkbox" id="has-plus-one" />
+          <label for="has-plus-one">I received an invitation for two guests</label>
+        <li id="additional-guest">
+          <label for="entry_1">Additional guest name</label>
+          <input type="text" name="entry.1.single" value="" id="entry_1">
+        </li>
+        <li>
+          <label for="entry_2">Attending<span class="ss-required-asterisk">*</span></label>
+          <ul>
+            <li>
+              <label><input type="radio" name="entry.2.group" value="Yes" id="group_2_1">Yes</label>
+            </li>
+            <li>
+              <label><input type="radio" name="entry.2.group" value="No" id="group_2_2">No</label>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <label for="entry_3">Dietary Restrictions</label>
+          <textarea name="entry.3.single" rows="8" cols="75" id="entry_3"></textarea>
+        </li>
+        <li>
+          <label for="wants-to-help"><input type="checkbox" id="wants-to-help" />I would like to help</label>
+          <ul id="help-options">
+            <li>
+              <label><input type="checkbox" name="entry.4.group" value="Set-up" id="group_4_1">Set-up</label>
+            </li>
+            <li>
+              <label><input type="checkbox" name="entry.4.group" value="Clean-up" id="group_4_2">Clean-up</label>
+            </li>
+            <li>
+              <label><input type="checkbox" name="entry.4.group" value="Out-of-town Guest Host" id="group_4_3">Out-of-town Guest Host</label>
+            </li>
+            <li>
+              <input type="checkbox" name="entry.4.group" value="__option__" id="other_option:4"><label for="other_option:4">Other:</label>
+              <input type="text" name="entry.4.group.other_option_" value="">
+            </li>
+          </ul>
+        </li>
+        <li>
+          <input type="submit" name="submit" value="Submit">
+        </li>
+      </ol>
+    </form>
     <h2>Location</h2>
     <h2>Nearby hotels</h2>
     <h2>Fun things to do in Portland</h2>
