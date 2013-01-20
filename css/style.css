@@ -79,6 +79,10 @@ body {
   color: #4e3f42;
 }
 
+em {
+  font-style: italic;
+}
+
 input, textarea {
   padding: 5px;
   border: 1px solid #b2a493;
