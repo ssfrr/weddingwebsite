@@ -122,7 +122,7 @@ form {
   background: rgba(255,255,255,0.4);
   border-radius: 4px;
   padding: 20px;
-  width: 50%;
+  width: 100%;
 }
 
 form ol, form li {
@@ -235,6 +235,7 @@ form input[type=submit][disabled] {
 
 .event span {
   color: gray;
+  font-size: 13px;
 }
 
 .time {
@@ -250,14 +251,24 @@ header {
 
 header img {
   position: absolute;
-  top: 0;
+  top: 8px;
   left: 50%;
   margin-left: -165px;
-  opacity: 0;
+
+  -webkit-transition: top 0.8s linear;
+  -moz-transition: top 0.8s linear;
+  -o-transition: top 0.8s linear;
+  -ms-transition: top 0.8s linear;
+  transition: top 0.8s linear;
+}
+
+header img.offset {
+  top: 0;
 }
 
 .column {
-  width: 1000px;
+  width: 640px;
+  min-height: 1980px;
   margin: 0 auto 50px;
   position: relative;
   overflow: hidden;

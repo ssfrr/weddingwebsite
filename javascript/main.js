@@ -28,9 +28,12 @@ var loadImages = function () {
 loadInitials = function () {
   var initialsImage = "images/initials-banner.png"
   initialsCB = function () {
-    $("header").append("<img src='"+initialsImage+"'>");
-    $("header img").animate({top: 8, opacity: 1}, 800, function () {
-      $(".column").fadeIn(function () {
+    $("header").append("<img class='offset hidden' src='"+initialsImage+"'>");
+    setTimeout(function () {
+      $("header img").removeClass("offset");
+    }, 10);
+    $("header img").fadeIn(800, function () {
+      $(".column").fadeIn("slow", function () {
         $("#map").append(map);
         $("body").append('<div class="footer" />');
       });
