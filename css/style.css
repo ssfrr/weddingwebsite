@@ -272,7 +272,7 @@ header img.offset {
 
 .column {
   width: 640px;
-  min-height: 1980px;
+  min-height: 1880px;
   margin: 0 auto 50px;
   position: relative;
   overflow: hidden;
@@ -298,7 +298,6 @@ nav a:first-child {
   clear: both;
   width: 100%;
   margin-top: 20px;
-  margin-bottom: 200px;
 }
 
 /* google maps helper text */
