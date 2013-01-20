@@ -76,6 +76,7 @@ body {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fcf1e3', endColorstr='#ebdfd0', GradientType=0);
   font-family: london;
   font-size: 18px;
+  color: #4e3f42;
 }
 
 input, textarea {
@@ -91,6 +92,13 @@ input:focus, textarea:focus {
   -moz-box-shadow: 0 0 3px rgba(141,188,165,.5);
   -webkit-box-shadow: 0 0 3px rgba(141,188,165,.5);
   box-shadow: 0 0 3px rgba(141,188,165,.5);
+}
+
+input.error, textarea.error {
+  border-color: red;
+  -moz-box-shadow: 0 0 3px rgba(255,0,0,.5);
+  -webkit-box-shadow: 0 0 3px rgba(255,0,0,.5);
+  box-shadow: 0 0 3px rgba(255,0,0,.5);
 }
 
 h2 {
@@ -190,7 +198,6 @@ form label {
   bottom: 1px;
 }
 
-
 form input[type=submit] {
   padding: 5px 10px;
   background: #8dbca5;
@@ -245,6 +252,11 @@ nav a:first-child {
   width: 100%;
   margin-top: 20px;
   margin-bottom: 200px;
+}
+
+/* google maps helper text */
+small {
+  font-size: 14px;
 }
 
 .footer {

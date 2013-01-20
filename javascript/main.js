@@ -3,7 +3,7 @@ $(document).ready(function () {
   loadImages();
 });
 
-var map = '<iframe width="640" height="480" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps/ms?msa=0&amp;msid=201398888939559602086.0004d3ba372798380cf15&amp;ie=UTF8&amp;t=m&amp;ll=45.540143,-122.66201&amp;spn=0.057712,0.109863&amp;z=13&amp;output=embed"></iframe><br /><small>View <a href="https://maps.google.com/maps/ms?msa=0&amp;msid=201398888939559602086.0004d3ba372798380cf15&amp;ie=UTF8&amp;t=m&amp;ll=45.540143,-122.66201&amp;spn=0.057712,0.109863&amp;z=13&amp;source=embed" style="color:#0000FF;text-align:left">Kate and Spencers Wedding Map</a> in a larger map</small>';
+var map = '<iframe width="640" height="480" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps/ms?msa=0&amp;msid=201398888939559602086.0004d3ba372798380cf15&amp;ie=UTF8&amp;t=m&amp;ll=45.540143,-122.66201&amp;spn=0.057712,0.109863&amp;z=13&amp;output=embed"></iframe><br /><small>View <a href="https://maps.google.com/maps/ms?msa=0&amp;msid=201398888939559602086.0004d3ba372798380cf15&amp;ie=UTF8&amp;t=m&amp;ll=45.540143,-122.66201&amp;spn=0.057712,0.109863&amp;z=13&amp;source=embed" style="text-align:left">Kate and Spencers Wedding Map</a> in a larger map</small>';
 
 var loadImages = function () {
   var headerCB = function () {
