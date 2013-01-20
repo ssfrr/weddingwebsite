@@ -30,6 +30,29 @@
   display: none;
 }
 
+/* fonts */
+@font-face {
+  font-family: 'neou';
+  src: url('../fonts/neou-thin-webfont.eot');
+  src: url('../fonts/neou-thin-webfont.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/neou-thin-webfont.woff') format('woff'),
+    url('../fonts/neou-thin-webfont.ttf') format('truetype'),
+    url('../fonts/neou-thin-webfont.svg#neou_thinthin') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'london';
+  src: url('../fonts/londonmm-webfont.eot');
+  src: url('../fonts/londonmm-webfont.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/londonmm-webfont.woff') format('woff'),
+    url('../fonts/londonmm-webfont.ttf') format('truetype'),
+    url('../fonts/londonmm-webfont.svg#londonmmregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
 /* elements */
 html {
   min-height: 100%;
@@ -38,6 +61,14 @@ html {
 body {
   min-height: 100%;
   background: #fcf1e3;
+  font-family: london;
+}
+
+h2 {
+  margin-top: 50px;
+  margin-bottom: 10px;
+  font-family: neou;
+  font-size: 30px;
 }
 
 header {
@@ -62,14 +93,16 @@ header img {
 }
 
 nav {
-  padding: 20px 0;
+  margin-top: 20px;
+  text-transform: lowercase;
 }
 
 nav a {
   float: left;
   margin-left: 20px;
+  color: #8dbca5; 
+  text-decoration: none;
 }
-
 
 nav a:first-child {
   margin-left: 0;
@@ -79,7 +112,7 @@ nav a:first-child {
   float: left;
   clear: both;
   width: 100%;
-  margin-top: 50px;
+  margin-top: 20px;
   margin-bottom: 200px;
 }
 

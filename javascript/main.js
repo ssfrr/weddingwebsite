@@ -22,6 +22,8 @@ loadInitials = function () {
     $("header").append("<img src='"+initialsImage+"'>");
     $("header img").animate({top: 8, opacity: 1}, 500, function () {
       $("#map").append(map);
+      $(".column").fadeIn();
+      $("body").append('<div class="footer" />');
     });
   }
 
