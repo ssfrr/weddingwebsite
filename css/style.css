@@ -65,7 +65,7 @@ html {
 }
 
 body {
-  min-height: 100%;
+  min-height: 2000px;
   background: #fcf1e3;
   background: -moz-linear-gradient(top,#fcf1e3 0,#ebdfd0 100%);
   background: -webkit-gradient(linear,left top,left bottom,color-stop(0%,#fcf1e3),color-stop(100%,#ebdfd0));
@@ -111,6 +111,7 @@ input.error, textarea.error {
 
 h2 {
   padding-top: 50px;
+  padding-left: 1px;
   margin-bottom: 10px;
   font-family: neou;
   font-size: 30px;
@@ -321,7 +322,6 @@ nav a:first-child {
   float: left;
   clear: both;
   width: 100%;
-  min-height: 1880px;
   margin-top: 20px;
 }
 
