@@ -23,8 +23,10 @@
           <a href="#schedule">Schedule</a>
           <a href="#location">Location</a>
           <a href="#hotels">Nearby hotels</a>
-          <a href="#portland">Fun things to do in Portland</a>
+          <a href="#portland">Portland</a>
+          <a href="#shout-outs">Shout Outs</a>
           <a href="#gifts">Gifts</a>
+          <a href="#contact">Contact Us</a>
         </div>
       </nav>
       <div class="intro">
@@ -45,7 +47,7 @@
         <form class="clearfix" action="https://docs.google.com/a/nicholasbs.net/spreadsheet/formResponse?formkey=dHI2MUVuRV9BbU5LMmk4enplYzZ2Mmc6MQ&amp;ifq" method="POST" target="hidden-iframe" id="rsvp-form">
           <ol>
             <li>
-              <label for="entry_0">Your name<span class="ss-required-asterisk">*</span></label>
+              <label for="entry_0">Name<span class="ss-required-asterisk">*</span></label>
               <br>
               <input type="text" name="entry.0.single" value="" data-validate="notEmpty" id="entry_0">
             </li>
@@ -60,19 +62,19 @@
               <label for="entry_2">Attending<span class="ss-required-asterisk">*</span></label>
               <ul>
                 <li>
-                  <label><input type="radio" name="entry.2.group" value="Yes" checked="checked" id="group_2_1">Yes</label>
+                  <label><input type="radio" name="entry.2.group" value="Yes" checked="checked" id="group_2_1">Yes. My anticipation knows no bounds</label>
                 </li>
                 <li>
-                  <label><input type="radio" name="entry.2.group" value="No" id="group_2_2">No</label>
+                    <label><input type="radio" name="entry.2.group" value="No" id="group_2_2">Can<span class="apostrophe">'</span>t make it, bummer</label>
                 </li>
               </ul>
             </li>
             <li>
-              <label for="entry_3">Dietary Restrictions</label>
+              <label for="entry_3">Please specify any dietary restrictions</label>
               <br>
               <textarea name="entry.3.single" rows="3" cols="75" id="entry_3"></textarea>
             </li>
-            <li>
+            <!-- <li>
               <label for="wants-to-help"><input type="checkbox" id="wants-to-help" />I would like to help</label>
               <ul id="help-options">
                 <li>
@@ -89,7 +91,7 @@
                   <input type="text" name="entry.4.group.other_option_" value="">
                 </li>
               </ul>
-            </li>
+            </li> -->
             <li>
               <input type="submit" name="submit" value="Submit">
             </li>
@@ -115,7 +117,7 @@
           </li>
           <li>
             <div class="event">
-              Dinner, Toasts, etc.
+              Dinner
               <span>&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;</span>
             </div>
             <div class="time">6:00</div>
@@ -127,33 +129,95 @@
             </div>
             <div class="time">7:30</div>
           </li>
-          <li>
-            <div class="event">
-              Go home safely!
-              <span>&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;</span>
-            </div>
-            <div class="time">11:00</div>
-          </li>
         </ul>
         <h2 id="location">Location</h2>
+        <h3>Union/Pine</h3>
+        <p>525 SE Pine Street</p>
+        <p>Portland, OR 97214</p>
+        <p><a href="http://unionpine.com/" target="_blank">unionpine.com</a></p>
+        <br>
         <div id="map"></div>
         <h2 id="hotels">Nearby hotels</h2>
-        <ul>
-            <li><a href="http://doubletree3.hilton.com/en/hotels/oregon/doubletree-by-hilton-hotel-portland-RLLC-DT">Double Tree</a></li>
-            <li><a href="http://www.marriott.com/hotels/travel/pdxcl-courtyard-portland-downtown-convention-center">Courtyard Marriot</a></li>
-            <li><a href="http://www.redlion.com/our-hotels/oregon/portland-convention-center">Red Lion Hotel</a></li>
-            <li><a href="http://www.eastsidelodge.com">Eastside Lodge</a></li>
-            <li><a href="https://www.hotelfifty.com">Hotel Fifty</a></li>
-            <li><a href="http://www.hotellucia.com">Hotel Lucia</a></li>
-            <li><a href="http://www.everettstreetguesthouse.com">Everett St Guest House</a></li>
-            <li><a href="http://www.acehotel.com/portland">Ace Hotel</a></li>
-            <li><a href="https://www.airbnb.com/s?location=Portland%2C+OR&checkin=&checkout=&guests=1">AirBnB</a></li>
-            <li><a href="http://goatlandia.com/">Goatlandia</a></li>
-        </ul>
+        <div id="hotels-list">
+            <div id="hotels-left">
+                <ul>
+                    <li><a href="http://doubletree3.hilton.com/en/hotels/oregon/doubletree-by-hilton-hotel-portland-RLLC-DT/index.html" target="_blank">Double Tree</a></li>
+                    <li><a href="http://www.marriott.com/hotels/travel/pdxcl-courtyard-portland-downtown-convention-center" target="_blank">Courtyard Marriot</a></li>
+                    <li><a href="http://www.redlion.com/our-hotels/oregon/portland-convention-center" target="_blank">Red Lion Hotel</a></li>
+                    <li><a href="http://www.eastsidelodge.com" target="_blank">Eastside Lodge</a></li>
+                    <li><a href="https://www.hotelfifty.com" target="_blank">Hotel Fifty</a></li>
+                </ul>
+            </div>
+            <div id="hotels-right">
+                <ul>
+                    <li><a href="http://www.hotellucia.com" target="_blank">Hotel Lucia</a></li>
+                    <li><a href="http://www.everettstreetguesthouse.com" target="_blank">Everett St Guest House</a></li>
+                    <li><a href="http://www.acehotel.com/portland" target="_blank">Ace Hotel</a></li>
+                    <li><a href="https://www.airbnb.com/s?location=Portland%2C+OR&checkin=&checkout=&guests=1" target="_blank">AirBnB</a></li>
+                    <li><a href="http://goatlandia.com/" target="_blank">Goatlandia</a></li>
+                </ul>
+            </div>
+        </div>
         <h2 id="portland">Fun things to do in Portland</h2>
+        <p>We love Portland and you will too! We encourage you to make a weekend out of it and enjoy all the Portland has to offer. Pro tip: Bring an umbrella.</p>
+        <h3>Food and Brew</h3>
+        <ul>
+            <li><a href="http://www.mothersbistro.com/" target="_blank">Mother’s Bistro</a> - Delicious upscale dining</li>
+            <li><a href="http://voodoodoughnut.com/" target="_blank">Voodoo Doughnuts</a> - Amazing and unique doughnut confections</li>
+            <li><a href="http://stumptowncoffee.com/location/portland/" target="_blank">Stumptown Coffee</a> - Pacific NW Coffee</li>
+            <li><a href="http://www.pinestatebiscuits.com/" target="_blank">Pine State Biscuits</a> - Get the Reggie. Amazing</li>
+            <li><a href="http://www.rogue.com/" target="_blank">Rogue Brewery</a> - Lots of tasty and interesting beers</li>
+            <li><a href="http://www.deschutesbrewery.com/locations/portland" target="_blank">Deshutes Brewery</a> - Yet another great NW brewery</li>
+            <li><a href="http://www.foodcartsportland.com/" target="_blank">Portland Food Carts</a> - So many to choose from!</li>
+            <li><a href="http://www.whiterabbitbakery.com/" target="_blank">White Rabbit Bakery</a> - Amazing bakery, Emily is also doing our cake!</li>
+        </ul>
+        <h3>Things to do and see</h3>
+        <ul>
+            <li><a href="http://www.hoodriverfruitloop.com/index.html" target="_blank">Hood River Fruit Loop</a></li>
+            <li><a href="http://traveloregon.com/trip-ideas/oregon-stories/the-portland-saturday-market/" target="_blank">Portland Saturday Market (Sat & Sun)</a></li>
+            <li><a href="http://www.portlandfarmersmarket.org/" target="_blank">Portland Farmer’s Market (Thursday)</a></li>
+            <li><a href="" target="_blank">Wine Tastings & Tours</a></li>
+            <li><a href="http://www.thesquarepdx.org/" target="_blank">Pioneer Courthouse Square</a></li>
+            <li><a href="http://www.woodburncompanystores.com/" target="_blank">Woodburn Company (Outlets)</a></li>
+            <li><a href="http://www.powells.com/" target="_blank">Powell’s Books</a></li>
+            <li><a href="http://www.oregonstateparks.org/park_211.php" target="_blank">Silver Falls</a></li>
+            <li><a href="http://www.oregonzoo.org/" target="_blank">Oregon Zoo</a></li>
+            <li><a href="http://www.omsi.edu/" target="_blank">OMSI</a> - You know, for <a href="http://www.youtube.com/watch?v=_SwvSu3jxAA" target="_blank">kids!</a></li>
+            <li><a href="http://en.wikivoyage.org/wiki/Portland_(Oregon)" target="_blank">Much More!</a></li>
+        </ul>
+        <h2 id="shout-outs">Shout Outs</h2>
+        <p>We have been so blessed by the contributions of many of our amazing and talented friends and family.</p>
+        <ul id="shout-out-list">
+            <li><a href="http://www.whiterabbitbakery.com/" target="_blank">White Rabbit Bakery</a> - Baking our cake and is generally amazing</li>
+            <li><a href="http://www.runhoperun.com/" target="_blank">Owen Hope Photography</a> - Capturing the proceedings for posterity </li>
+            <li><a href="http://www.carolineclaflin.com/" target="_blank">Caroline Claflin</a> - Designed our Save-The-Dates and Invitations. So beautiful!</li>
+            <li><a href="http://www.michaelgeraci.com/" target="_blank">Michael Geraci</a> - Main design for the website you<span class="apostrophe">'</span>re looking at now</li>
+            <li><a href="http://www.nick.is/" target="_blank">Nicholas Bergson-Shilcock</a> - Did the fancy engineering work for the website</li>
+            <li><a href="http://www.noahbernstein.com/" target="_blank">Noah Bernstein</a> - Coordinating the music you<span class="apostrophe">'</span>ll be enjoying during the reception</li>
+            <li>Alex Charrow - Hand-painted the artwork you see on this website</li>
+            <li>Daphne Russell, Sheryl Russell, and Brittany Russell - Making the space beautiful (as well as mountains of general support)</li>
+            <li>Mike Pratchenko - Made Kate<span class="apostrophe">'</span>s gorgeous ring and our wedding rings</li>
+        </ul>
         <h2 id="gifts">Gifts</h2>
         <p>Your presence at our celebration is gift enough, but if you would like to make a contribution towards our honeymoon fund you may do so
-        <a href="https://www.smartypig.com/find-users/contribute?userId=f2ec8df2-4ac8-439b-967d-b0cb83563e8c&goalId=4931c0b4-b991-4ea6-845c-442482fc0e2c">here</a>.</p>
+        <a href="https://www.smartypig.com/find-users/contribute?userId=f2ec8df2-4ac8-439b-967d-b0cb83563e8c&goalId=4931c0b4-b991-4ea6-845c-442482fc0e2c">here</a>. Also, if you would like to help out with the wedding we would be honored and grateful. Feel free to get in touch via the links below.</p>
+        <h2 id="contact">Contact Us</h2>
+        <ul id="contact-table">
+          <li>
+            <div class="name">Spencer</div>
+            <div class="email"><a href="mailto:spencer.f.russell@gmail.com">spencer.f.russell@gmail.com</a></div>
+          </li>
+          <li>
+            <div class="name">Kate</div>
+            <div class="email"><a href="mailto:kate.l.millington@gmail.com">kate.l.millington@gmail.com</a></div>
+          </li>
+          <li>
+            <div class="address">
+                <p>2316 South Street #3</p>
+                <p>Philadelphia, PA 19146</p>
+            </div>
+          </li>
+        </ul>
       </div>
     </div>
     </body>
