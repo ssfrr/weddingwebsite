@@ -64,8 +64,11 @@ html {
   min-height: 100%;
 }
 
-body {
+#main-site-body {
   min-height: 2000px;
+}
+
+body {
   background: #fcf1e3;
   background: -moz-linear-gradient(top,#fcf1e3 0,#ebdfd0 100%);
   background: -webkit-gradient(linear,left top,left bottom,color-stop(0%,#fcf1e3),color-stop(100%,#ebdfd0));
@@ -318,6 +321,25 @@ header img {
 
 header img.offset {
   top: -4px;
+}
+
+#std-content {
+    margin-left: auto;
+    margin-right: auto;
+    width: 800px;
+}
+
+#save-the-date {
+    display: block;
+    margin: 10px auto;
+    width: 800px;
+}
+
+.std-link {
+    display: block;
+    margin: 10px auto;
+    text-align: center;
+    width: 100px;
 }
 
 .column {
