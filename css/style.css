@@ -94,7 +94,7 @@ input, textarea {
 }
 
 input:focus, textarea:focus {
-  border: 1px solid #8dbca5;
+  border: 1px solid #6EA88C;
   outline: none;
   -moz-box-shadow: 0 0 3px rgba(141,188,165,.5);
   -webkit-box-shadow: 0 0 3px rgba(141,188,165,.5);
@@ -130,7 +130,7 @@ h3 {
 }
 
 a {
-  color: #8dbca5;
+  color: #6EA88C;
   text-decoration: none;
 }
 
@@ -220,7 +220,7 @@ form label {
 
 form input[type=submit] {
   padding: 5px 10px;
-  background: #8dbca5;
+  background: #6EA88C;
   border-color: #89ad9b;
   color: white;
   font-size: 14px;
